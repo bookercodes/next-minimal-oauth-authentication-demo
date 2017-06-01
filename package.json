@@ -1,0 +1,27 @@
+{
+  "name": "next-sessions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node ./server"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "eslint-plugin-import": "^2.3.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "next": "beta",
+    "passport": "^0.3.2",
+    "passport-google-oauth2": "^0.1.6",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
