@@ -15,7 +15,8 @@
     "passport": "^0.3.2",
     "passport-google-oauth2": "^0.1.6",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

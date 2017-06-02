@@ -62,9 +62,27 @@ app.prepare().then(() => {
     '/auth/google/callback',
     passport.authenticate('google', {
       failureRedirect: '/error/oauth',
-      successRedirect: '/'
+      successRedirect: '/admin'
     })
   )
+
+  server.post('/auth/logout', (req, res) => {
+    console.log('server = logout')
+    req.logout()
+    res.redirect('/')
+  })
+
+  server.get('/auth/session', (req, res) => {
+    let session = {
+      clientMaxAge: 60000 * 60 * 24 * 7 * 4
+    }
+    // Add user object to session if logged in
+    if (req.user) {
+      session.user = req.user
+    }
+    return res.json(session)
+  })
+
   server.get('*', (req, res) => handleReq(req, res))
   server.listen(process.env.PORT, err => {
     if (err) throw err

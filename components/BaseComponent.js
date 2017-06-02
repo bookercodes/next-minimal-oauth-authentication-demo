@@ -18,7 +18,7 @@ class Layout extends React.Component {
         <header>
           <h1>Sessions</h1>
           <h2>Admin</h2>
-          <p>{this.props.session.user.displayName}</p>
+          <p>{this.props.displayName}</p>
           <nav>
             <Link href="/"><a>Home</a></Link>
             <Link href="/about"><a>About</a></Link>

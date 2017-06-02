@@ -13,7 +13,7 @@ export default Component => {
       } else {
         // running on client...
       }
-      return { setByWithSession: 'yarr', session }
+      return { isAuthenticated: req.isAuthenticated(), session }
     }
 
     render () {

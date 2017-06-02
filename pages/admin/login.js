@@ -5,7 +5,7 @@ export default class extends React.Component {
     return (
       <div>
         <h2>Login</h2>
-        <a href="/">Login with Google</a>
+        <a href="/auth/google">Login with Google</a>
       </div>
     )
   }
