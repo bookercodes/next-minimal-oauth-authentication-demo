@@ -1,13 +1,14 @@
-/* global fetch */
+// /* global fetch */
 import React from 'react'
-import Router from 'next/router'
+// import Router from 'next/router'
 import 'whatwg-fetch'
 
 export default Component => {
   return class extends React.Component {
     static async getInitialProps ({ req, res }) {
-      let session
+      let session = {}
       if (req) {
+        console.log('on the server...')
         if (req.user) {
           session = {
             user: req.user
@@ -20,8 +21,13 @@ export default Component => {
           credentials: 'same-origin'
         })
         const json = await response.json()
-        session = {
-          user: json.user
+        console.log('json', json)
+        if (json.user) {
+          session = {
+            user: json.user
+          }
+        } else {
+          Router.push('/admin/login')
         }
       }
 
@@ -29,18 +35,15 @@ export default Component => {
       if (session.user && session.user.id) {
         isAuthenticated = true
       }
-
+      console.log('returning...', JSON.stringify({ isAuthenticated, session }))
       return { isAuthenticated, session }
     }
 
-    componentWillMount () {
-      if (!this.props.isAuthenticated) {
-        Router.push('/admin/login')
-      }
-    }
-
     render () {
-      return <Component {...this.props} />
+      if (this.props.isAuthenticated) {
+        return <Component {...this.props} />
+      }
+      return null
     }
   }
 }

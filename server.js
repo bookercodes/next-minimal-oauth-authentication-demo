@@ -67,7 +67,6 @@ app.prepare().then(() => {
   )
 
   server.post('/auth/logout', (req, res) => {
-    console.log('server = logout')
     req.logout()
     res.redirect('/')
   })
