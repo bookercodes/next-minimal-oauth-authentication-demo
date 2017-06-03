@@ -1,6 +1,6 @@
-// /* global fetch */
+/* global fetch */
 import React from 'react'
-// import Router from 'next/router'
+import Router from 'next/router'
 import 'whatwg-fetch'
 
 export default Component => {

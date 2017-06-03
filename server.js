@@ -82,6 +82,7 @@ app.prepare().then(() => {
     return res.json(session)
   })
 
+  server.get('/test', (req, res) => res.redirect('/admin/login'))
   server.get('*', (req, res) => handleReq(req, res))
   server.listen(process.env.PORT, err => {
     if (err) throw err
