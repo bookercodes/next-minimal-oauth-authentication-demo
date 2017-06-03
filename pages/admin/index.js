@@ -1,5 +1,5 @@
-import ensureAuthenticated from '../../components1/ensureAuthenticated'
-import AdminLayout from '../../components1/admin/adminLayout'
+import ensureAuthenticated from '../../components/ensureAuthenticated'
+import AdminLayout from '../../components/admin/adminLayout'
 import Link from 'next/link'
 
 const AdminHome = props => {
